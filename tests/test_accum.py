@@ -1,10 +1,11 @@
-# This module contains basic unit tests for accum module.
 import pytest
 import sys
 import os
+
 parent_dir = os.getcwd()
 path = os.path.dirname(parent_dir)
 sys.path.append(path)
+
 from stuff.accum import Accumulator
 
 
@@ -12,6 +13,8 @@ from stuff.accum import Accumulator
 def accum():
     yield Accumulator()
     print("DONE...! wow")
+
+
 # TEST
 
 
@@ -32,7 +35,7 @@ def test_accumulator_three(accum):
 def test_accumulator_twice(accum):
     accum.add()
     accum.add()
-    assert accum.count ==2
+    assert accum.count == 2
 
 
 def test_accumulator_cannot_set_count_directly(accum):
